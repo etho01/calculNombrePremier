@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try {
-
+                    for(int index = (listNombrePremier).getChildCount() - 1; index >= 0; index--) {
+                        View child = (listNombrePremier).getChildAt(index);
+                        listNombrePremier.removeView(child);
+                    }
                     long nbMaxVal = Integer.parseInt(nbMax.getText().toString());
                     CalculNombrePremierAsyncTask asyncTask = new CalculNombrePremierAsyncTask(
                             self
@@ -54,13 +58,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public TextView getNumberInProgress()
-    {
-        return numberInProgress;
-    }
-
     public void setDurration(int time)
     {
         this.timeExecution.setText(time + " ms");
+    }
+
+
+    public void addNombrePremier(int nb)
+    {
+        TextView nombrePremier = new TextView(this);
+        nombrePremier.setText(nb + " est un nombre premier");
+        listNombrePremier.addView(nombrePremier);
+    }
+
+    public void updateNumberProcess(int number)
+    {
+        numberInProgress.setText("calcul du nombre " + number);
+    }
+
+    public void setNombreResult(int nbResult)
+    {
+        numberInProgress.setText(nbResult  + " nombres premiers trouvés");
     }
 }

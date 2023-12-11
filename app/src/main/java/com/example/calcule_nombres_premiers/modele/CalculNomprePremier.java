@@ -5,10 +5,11 @@ public class CalculNomprePremier {
 
     public   static  boolean isPremier(int nombre)
     {
-        for (int i = 1 ; i < nombre/2 ; i++)
+        int reste;
+        for (int i = 2 ; i <= nombre/2 ; i++)
         {
-            int reste = nombre % i;
-            Log.i("frd", reste + " " + nombre);
+            reste = (nombre % i);
+            Log.i( "isPremier", nombre + " " + i + " " + reste);
             if (reste == 0)
             {
                 return  false;
