@@ -33,7 +33,7 @@
             android:background="@color/design_default_color_secondary"
             android:backgroundTintMode="src_in"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="number" />
 
         <Button
             android:id="@+id/btnEmpiler"
@@ -54,24 +54,29 @@
             android:ems="10"
             android:textSize="20sp" />
 
-        <LinearLayout
-            android:id="@+id/listNombrePremier"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/timeExecution"
+        <TextView
+            android:id="@+id/timeExecution"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#A89F9F"
+            android:ems="10"
+            android:textSize="20sp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/listNombrePremier"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="#A89F9F"
-                android:ems="10"
-                android:textSize="20sp" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:orientation="vertical">
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
