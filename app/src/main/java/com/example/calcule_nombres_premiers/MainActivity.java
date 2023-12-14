@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         View child = (listNombrePremier).getChildAt(index);
                         listNombrePremier.removeView(child);
                     }
-                    long nbMaxVal = Integer.parseInt(nbMax.getText().toString());
+                    long nbMaxVal = Long.parseLong(nbMax.getText().toString());
                     CalculNombrePremierAsyncTask asyncTask = new CalculNombrePremierAsyncTask(
                             self
                     );
